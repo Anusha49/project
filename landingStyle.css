@@ -1,0 +1,79 @@
+.navbar{
+    padding:10px;
+    border:20px;
+    background-color:blueviolet;
+    cursor: pointer; 
+    text-decoration: none; 
+    color:white;
+    font-family: georgia;  
+
+    
+}
+
+.register{
+    padding-right: 15px;
+    text-decoration: none;
+    color:white;
+}
+.register:hover{
+    color:black;
+}
+.search{
+    padding-left:90px;
+    margin-left: 620px;
+}
+.search:hover{
+    color:black;
+}
+.home{
+    color: white;
+    text-decoration:none;
+}
+.home:hover{
+    color:black;
+}
+.contact{
+    color:white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+.contact:hover{
+    color:black;
+}
+.news{
+    color:white;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 15px;
+
+}
+.news:hover{
+    color: rgb(30, 30, 4);
+}
+.login{
+    color:white;
+    text-decoration:none;
+    margin-right:20px;
+
+}
+.login:hover{
+    color:black;
+
+}
+.logo{
+    width:40%;
+    height:40%;
+    align-items:left;
+    pointer-events:none;
+    border-radius: 20%;
+}
+.div{
+    background-color: blueviolet;
+}
+.location{
+    margin-left:50%;
+    color:white;
+    font-size:22px;
+    align-items:center;
+   
+}

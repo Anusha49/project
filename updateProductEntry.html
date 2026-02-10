@@ -1,0 +1,108 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Entry Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #6a5acd; 
+            text-align: center;
+        }
+
+        form {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+
+        div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            color: #4b0082;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #6a5acd; 
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #6a5acd; 
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #483d8b; 
+        }
+    </style>
+</head>
+<body>
+        <form method="POST" action="update.php" enctype="multipart/form-data">
+
+        <h2>Product Entry Form</h2>
+        
+        <div>
+            <label for="productcode">Product Code:</label>
+            <input type="number" id="productcode" name="productcode" required>
+        </div>
+        
+        <div>
+            <label for="productname">Product Name:</label>
+            <input type="text" id="productname" name="productname" required>
+        </div>
+        
+        <div>
+            <label for="producttype">Product Type:</label>
+            <input type="text" id="producttype" name="producttype" required>
+        </div>
+        
+        <div>
+            <label for="productunit">Product Unit:</label>
+            <input type="number" id="productunit" name="productunit" required>
+        </div>
+        
+        <div>
+            <label for="salesrate">Sales Rate:</label>
+            <input type="number" id="salesrate" name="salesrate" step="0.01" required>
+        </div>
+        
+        <div>
+            <label for="uploadphoto">Upload Photo:</label>
+            <input type="file" id="uploadphoto" name="uploadphoto">
+        </div>
+        
+        <div>
+            <input type="submit" name="submit" value="update">
+        </div>
+    </form>
+</body>
+</html>
+

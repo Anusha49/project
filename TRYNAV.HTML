@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product and Employee Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #6a0dad;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar h2 {
+            display: inline-block;
+            margin: 0 20px 0 0;
+            font-weight: bold;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ffdd00;
+        }
+
+        /* Content */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s ease;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+
+        .box img {
+            width: 150px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .box h1 {
+            color: #333;
+            font-size: 1.5rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .box p {
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        .box a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .box a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: #ddd;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: #ffdd00;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 5px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <h4><marquee> Welcome as Admin</marquee> </h4>
+        
+        <a href="settings.php">Settings</a>
+        <a href="logout.php">Log Out</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- New Product Box -->
+        <div class="box">
+            <img src="bg.jpg" alt="New Product">
+            <h1>New Product</h1>
+            <p><a href="productEntry.html">Entry Product?</a></p>
+            <p><a href="viewProduct.php">View Product</a></p>
+        </div>
+
+        <!-- Employee Registration Box -->
+        <div class="box">
+            <img src="employee_registration.jpg" alt="Register Employee">
+            <h1>Employee Registration</h1>
+            <p><a href="registrationformForEmployee.html">Register Employee?</a></p>
+            <p><a href="ViewEmployee.php">View Employee</a></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Admin Panel | <a href="privacy.php">Privacy Policy</a> | <a href="terms.php">Terms of Service</a></p>
+    </div>
+
+</body>
+</html>

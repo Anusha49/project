@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goods Out Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: blueviolet;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            width: 50%;
+            margin: 50px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        .store_info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .store_info h1 {
+            color: #333;
+            font-size: 2rem;
+        }
+
+        .store_info h6 {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .customer_info, .product_info {
+            margin-bottom: 20px;
+        }
+
+        .customer_info label, .product_info label {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="text"], input[type="number"], input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: blueviolet;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #4a8bba;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <form method="POST" action="goodsOut.php">
+            <div class="store_info">
+                <h1><strong>Smart Store</strong></h1>
+                <h6>Budhanilkantha-12, Kathmandu<br>hamrostore@gmail.com, 01758828</h6>
+                <hr>
+            </div>
+
+            <div class="customer_info">
+                <label><strong>Customer Info</strong></label>
+                <label for="customer_name">Customer Name</label>
+                <input type="text" id="customer_name" name="customer_name" required>
+
+                <label for="customer_phone">Phone Number</label>
+                <input type="text" id="customer_phone" name="customer_no" required>
+                <hr>
+            </div>
+
+            <div class="product_info">
+                <label><strong>Product Info</strong></label>
+
+                <!-- PRODUCT CODE -->
+                <label for="product_code">Product Code</label>
+                <input type="text" id="product_code" name="product_code" required onkeyup="fetchProductName()">
+
+                <!-- AUTO-FILL PRODUCT NAME -->
+                <label for="product_name">Product Name</label>
+                <input type="text" id="product_name" name="product_name" readonly required>
+
+                <label for="product_quantity">Quantity</label>
+                <input type="number" id="product_quantity" name="product_quantity" required min="1">
+
+                <label for="rate">Rate</label>
+                <input type="text" name="rate">
+
+                <label for="unit">Unit</label>
+                <select id="dropdown" name="product_unit">
+                    <option value="kg">kilo gram(kg)</option>
+                    <option value="grm">gram(g)</option>
+                    <option value="liter">liter(l)</option>
+                    <option value="ml">mili liter(ml)</option>
+                    <option value="pieces">piece</option>
+                </select>
+
+                <label for="date_time">Date</label>
+                <input type="date" id="date" name="date" required>
+                <br><br>
+
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Autofill current date
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().slice(0, 10);
+            document.getElementById('date').value = today;
+        });
+
+        // Fetch Product Name using AJAX
+        function fetchProductName() {
+            let productCode = document.getElementById("product_code").value;
+
+            if (productCode.length === 0) {
+                document.getElementById("product_name").value = "";
+                return;
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "fetchProduct.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            xhr.onload = function() {
+                if (this.status === 200) {
+                    document.getElementById("product_name").value = this.responseText;
+                }
+            };
+
+            xhr.send("product_code=" + encodeURIComponent(productCode));
+        }
+    </script>
+
+</body>
+</html>
