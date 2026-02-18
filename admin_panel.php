@@ -229,7 +229,7 @@ mysqli_close($conn);
         <img src="sales.jpeg">
         <h1>Sales</h1>
         <p><a href="salesHistory.php">Sales History</a></p>
-         <p><a href="predictedSales.php">Predicted Sales </a></p>
+         <p><a href="uiforsalespredict.php">Predicted Sales </a></p>
 
     </div>
     </div>
